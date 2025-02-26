@@ -1,0 +1,42 @@
+<div class="container mt-5 d-flex justify-content-center">
+  <div class="card bill-card">
+    <div class="card-body">
+      <h2 class="text-center mb-4">Invoice</h2>
+      <p><strong>Date:</strong> {{ orderDetails?.date }}</p>
+      <hr />
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of orderDetails?.items">
+            <td>{{ item.title }}</td>
+            <td>{{ item.price }} SR</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr />
+      <p *ngIf="orderDetails?.promoCode" class="promo-code">
+        <strong>Promo Code Applied:</strong> {{ orderDetails.promoCode }} ({{
+          orderDetails.discount * 100
+        }}% off)
+      </p>
+
+      <div class="d-flex justify-content-between mt-3">
+        <h4>Total:</h4>
+        <h4>{{ orderDetails?.totalPrice }}</h4>
+      </div>
+
+      <div class="text-center mt-4">
+        <button class="btn btn-success px-4" (click)="printBill()">
+          Print Bill
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

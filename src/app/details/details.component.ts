@@ -28,7 +28,7 @@ export class DetailsComponent implements OnInit {
     fetch(`https://fakestoreapi.com/products/${this.id}`)
       .then((response) => response.json())
       .then((result) => {
-        result.price = (result.price * 3.75).toFixed(2); // Convert price if needed
+        result.price = (result.price * 3.75).toFixed(2); 
         this.data = result;
       });
   }

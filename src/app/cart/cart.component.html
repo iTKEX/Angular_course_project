@@ -70,7 +70,7 @@
                     <h5>{{ getTotalPrice(cart$ | async) }}</h5>
                   </div>
 
-                  <button type="button" class="btn btn-outline-success btn-lg me-1">
+                  <button type="button" class="btn btn-outline-success btn-lg me-1" (click)="checkout()" routerLink="/bill">
                     Checkout
                   </button>
                 </div>

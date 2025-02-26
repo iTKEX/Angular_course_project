@@ -4,12 +4,13 @@ import { Observable } from 'rxjs';
 import { Product } from '../models/product.model';
 import { removeFromCart } from '../state/cart/cart.actions';
 import { decrement } from '../state/counter/counter.actions';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
   standalone: false,
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
   cart$: Observable<Product[]>;
@@ -19,11 +20,13 @@ export class CartComponent implements OnInit {
   isInvalidPromo: boolean = false;
 
   private promoCodes: { [key: string]: number } = {
-    winter: 0.25, 
-    first: 0.40   
+    winter: 0.25,
+    first: 0.4,
   };
 
-  constructor(private store: Store<{ cart: Product[] }>) {
+  constructor(
+    private store: Store<{ cart: Product[] }>,
+  ) {
     this.cart$ = this.store.select('cart');
   }
 
@@ -39,7 +42,9 @@ export class CartComponent implements OnInit {
 
     if (this.promoCodes[code]) {
       this.discount = this.promoCodes[code];
-      this.promoMessage = `Promo Code Applied! You got ${this.discount * 100}% off.`;
+      this.promoMessage = `Promo Code Applied! You got ${
+        this.discount * 100
+      }% off.`;
       this.isInvalidPromo = false;
     } else {
       this.promoMessage = 'Invalid Promo Code';
@@ -51,7 +56,21 @@ export class CartComponent implements OnInit {
   getTotalPrice(cart: Product[] | null): string {
     if (!cart) return '0.00 SR';
     const total = cart.reduce((sum, item) => sum + item.price, 0);
-    const discountedTotal = total - (total * this.discount);
+    const discountedTotal = total - total * this.discount;
     return discountedTotal.toFixed(2) + ' SR';
+  }
+
+  checkout() {
+    this.cart$.subscribe((cart) => {
+      const orderDetails = {
+        items: cart,
+        totalPrice: this.getTotalPrice(cart),
+        date: new Date().toLocaleString(),
+        promoCode: this.promoCode || 'None',
+        discount: this.discount,
+      };
+
+      localStorage.setItem('orderDetails', JSON.stringify(orderDetails));
+    });
   }
 }

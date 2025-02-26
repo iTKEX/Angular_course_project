@@ -1,50 +1,47 @@
-/* General container and card styling */
 .container {
-    max-width: 900px;
+  max-width: 900px;
+}
+
+.card {
+  background-color: #f7f9fc;
+  border-radius: 15px;
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+h2 {
+  font-family: "Arial", sans-serif;
+  font-weight: bold;
+}
+
+input.form-control,
+textarea.form-control {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  transition: border-color 0.3s;
+}
+
+input.form-control:focus,
+textarea.form-control:focus {
+  box-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
+}
+
+.btn-dark {
+  border-radius: 8px;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-dark:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
   }
-  
-  .card {
-    background-color: #f7f9fc;
-    border-radius: 15px;
-  }
-  
-  .card-body {
-    padding: 2rem;
-  }
-  
-  /* Heading styling */
-  h2 {
-    font-family: 'Arial', sans-serif;
-    font-weight: bold;
-  }
-  
-  /* Input and textarea styling */
-  input.form-control, textarea.form-control {
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    transition: border-color 0.3s;
-  }
-  
-  input.form-control:focus, textarea.form-control:focus {
-    box-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
-  }
-  
-  /* Button Styling */
-  .btn-dark {
-    border-radius: 8px;
-    padding: 12px 30px;
-    font-size: 1.1rem;
-    transition: background-color 0.3s, transform 0.2s;
-  }
-  
-  .btn-dark:hover {
-    transform: scale(1.05);
-  }
-  
-  /* Add responsiveness */
-  @media (max-width: 768px) {
-    .container {
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-  }  
+}

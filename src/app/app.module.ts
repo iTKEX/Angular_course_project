@@ -19,6 +19,7 @@ import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
 import { cartReducer } from './reducers/cart/cart.reducer';
 import { counterReducer } from './reducers/counter.reducer';
+import { BillComponent } from './bill/bill.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { counterReducer } from './reducers/counter.reducer';
     WomenClothingComponent,
     InfoComponent,
     DetailsComponent,
-    CartComponent
+    CartComponent,
+    BillComponent
   ],
   imports: [
     BrowserModule,

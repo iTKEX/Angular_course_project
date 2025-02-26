@@ -1,7 +1,6 @@
 <app-header></app-header>
 
 <div class="container py-5">
-  <!-- Back Button -->
   <div class="text-start mb-3">
     <button class="btn btn-light" routerLink="">
       <i class="bi bi-arrow-left"></i> Back
@@ -14,7 +13,6 @@
         <div class="card shadow-lg border-0 rounded-4 p-3">
           <div class="card-body">
             <div class="row align-items-center">
-              <!-- Item Image -->
               <div class="col-sm-2 col-5 col-lg-2 d-flex justify-content-center">
                 <img
                   src="{{ item.image }}"
@@ -24,7 +22,6 @@
                 />
               </div>
 
-              <!-- Item Title and Description -->
               <div class="col-sm-8 border-start border-end">
                 <small class="d-flex justify-content-start text-dark fw-bold">{{
                   item.title
@@ -34,7 +31,6 @@
                 }}</small>
               </div>
 
-              <!-- Item Price and Button -->
               <div class="col">
                 <small class="d-flex justify-content-center text-danger fw-bold"
                   >{{ item.price }} SR</small
