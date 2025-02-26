@@ -1,0 +1,61 @@
+<app-header></app-header>
+
+<div class="container py-5">
+  <!-- Back Button -->
+  <div class="text-start mb-3">
+    <button class="btn btn-light" routerLink="">
+      <i class="bi bi-arrow-left"></i> Back
+    </button>
+  </div>
+
+  <div *ngFor="let item of data">
+    <div class="row mt-4 d-flex justify-content-center">
+      <div class="col-sm-10 col-12 col-lg-9">
+        <div class="card shadow-lg border-0 rounded-4 p-3">
+          <div class="card-body">
+            <div class="row align-items-center">
+              <!-- Item Image -->
+              <div class="col-sm-2 col-5 col-lg-2 d-flex justify-content-center">
+                <img
+                  src="{{ item.image }}"
+                  width="80"
+                  height="80"
+                  class="rounded-3"
+                />
+              </div>
+
+              <!-- Item Title and Description -->
+              <div class="col-sm-8 border-start border-end">
+                <small class="d-flex justify-content-start text-dark fw-bold">{{
+                  item.title
+                }}</small>
+                <small class="d-flex justify-content-start text-muted">{{
+                  item.description
+                }}</small>
+              </div>
+
+              <!-- Item Price and Button -->
+              <div class="col">
+                <small class="d-flex justify-content-center text-danger fw-bold"
+                  >{{ item.price }} SR</small
+                >
+                <div class="row mt-2">
+                  <div class="col">
+                    <a
+                      class="btn btn-outline-dark text-center w-100 py-2"
+                      [routerLink]= "['/details', item.id]"
+                    >
+                      <i class="fa fa-info-circle me-2"></i> Details
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

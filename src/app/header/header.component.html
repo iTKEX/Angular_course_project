@@ -1,0 +1,44 @@
+<header>
+  <nav class="navbar navbar-expand-lg bg-light shadow-sm pt-3">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center fw-bold" routerLink="">
+        <img
+          src="imgs/logo.png"
+          alt="ShopLogo"
+          class="rounded-circle me-2"
+          width="70"
+          height="70"
+        />
+        <span>Turki Market</span>
+      </a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" routerLink="">Home</a></li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="info">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link position-relative" routerLink="/cart">
+              🛒 Cart
+              <span
+                class="badge bg-danger position-absolute top-0 start-100 translate-middle"
+              >
+                {{ counter$ | async }}
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

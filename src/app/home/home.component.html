@@ -1,0 +1,81 @@
+<app-header></app-header>
+
+<div class="row row-cols-1 row-cols-md-4 g-4 m-2 justify-content-center">
+  <div class="col">
+    <div class="card shadow-sm">
+      <img
+        src="imgs/electronic.png"
+        class="card-img-top"
+        alt="electronic"
+        height="200"
+        width="300"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{data[0]}}</h5>
+        <p class="card-text">
+          Explore a wide range of {{data[0]}}. Discover amazing deals and more!
+        </p>
+        <a routerLink="electronics" class="btn btn-outline-dark w-100">Find {{data[0]}}</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card shadow-sm">
+      <img
+        src="imgs/jelewry.png"
+        class="card-img-top"
+        alt="electronic"
+        height="200"
+        width="300"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ data[1] }}</h5>
+        <p class="card-text">
+          Explore a wide range of {{data[1]}}. Discover amazing deals and more!
+        </p>
+        <a routerLink="jelewry" class="btn btn-outline-dark w-100">Find {{data[1]}}</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card shadow-sm">
+      <img
+        src="imgs/men.png"
+        class="card-img-top"
+        alt="electronic"
+        height="200"
+        width="300"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{data[2]}}</h5>
+        <p class="card-text">
+          Explore a wide range of {{data[2]}}. Discover amazing deals and more!
+        </p>
+        <a routerLink="men's" class="btn btn-outline-dark w-100">Find {{data[2]}}</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card shadow-sm">
+      <img
+        src="imgs/women.png"
+        class="card-img-top"
+        alt="electronic"
+        height="200"
+        width="300"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{data[3]}}</h5>
+        <p class="card-text">
+          Explore a wide range of {{data[3]}}. Discover amazing deals and more!
+        </p>
+        <a routerLink="women's" class="btn btn-outline-dark w-100">Find {{data[3]}}</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

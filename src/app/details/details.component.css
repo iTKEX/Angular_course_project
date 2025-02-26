@@ -1,0 +1,17 @@
+.container {
+    max-width: 1500px;
+  }
+
+  .card {
+    background-color: #f8f9fa;
+  }
+  
+  img {
+    border: 2px solid #ddd;
+    padding: 5px;
+  }
+  
+  .btn-dark {
+    font-size: 1.2rem;
+  }
+  

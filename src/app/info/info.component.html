@@ -1,0 +1,42 @@
+<app-header></app-header>
+
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <!-- Back Button -->
+    <div class="text-start mb-3">
+      <button class="btn btn-light" routerLink="">
+        <i class="bi bi-arrow-left"></i> Back
+      </button>
+    </div>
+
+    <div class="col-md-8">
+      <div class="card shadow-lg border-0 rounded-4 p-4 text-center">
+        <h2 class="text-dark fw-bold">About This Website</h2>
+        <p class="text-muted mt-3">
+          This website was developed by <strong>Turki Almalki</strong>. It is
+          designed to provide a seamless and user-friendly experience.
+        </p>
+        <p class="text-muted">
+          Built using modern web technologies, this platform ensures efficiency,
+          responsiveness, and accessibility for all users.
+        </p>
+        <p class="text-muted">For inquiries, feel free to reach out!</p>
+        <a
+          class="text-dark me-3 text-decoration-none fw-bold"
+          [href]="'https://wa.me/' + whats"
+          target="_blank"
+        >
+          <i class="bi bi-whatsapp"></i> Chat on WhatsApp
+        </a>
+        <a
+          class="text-dark me-3 text-decoration-none fw-bold"
+          href="mailto:{{ email }}"
+        >
+          <i class="bi bi-envelope-at me-2"></i> Send an Email
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
