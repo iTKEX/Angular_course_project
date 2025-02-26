@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-details',
-  standalone:false,
+  standalone: false,
   templateUrl: './details.component.html',
   styleUrl: './details.component.css',
 })
@@ -33,8 +33,8 @@ export class DetailsComponent implements OnInit {
       });
   }
 
-  goBack(){
-    
+  goBack() {
+    window.history.back();
   }
 
   addToCart() {

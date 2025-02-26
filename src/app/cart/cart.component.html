@@ -13,7 +13,6 @@
                   </div>
                   <hr class="my-4" />
 
-                  <!-- Dynamic Cart Items -->
                   <div *ngFor="let product of cart$ | async; let i = index" class="row mb-4">
                     <div class="col-md-2">
                       <img [src]="product.image" class="img-fluid rounded-3" />
@@ -42,7 +41,6 @@
                 </div>
               </div>
 
-              <!-- Summary Section -->
               <div class="col-lg-4 bg-light">
                 <div class="p-5">
                   <h3 class="fw-bold mb-5 mt-2 pt-1">Summary</h3>
@@ -50,17 +48,33 @@
 
                   <div class="d-flex justify-content-between mb-4">
                     <h5 class="text-uppercase">Total Items: {{ (cart$ | async)?.length }}</h5>
-                    <h5>{{ getTotalPrice(cart$ | async) }} SR</h5>
+                    <h5>{{ getTotalPrice(cart$ | async) }}</h5>
                   </div>
 
+                  <h5 class="text-uppercase mb-3">Promo Code</h5>
+                  <div class="mb-3 d-flex">
+                    <input type="text" class="form-control form-control-md" [(ngModel)]="promoCode" placeholder="Enter promo code" />
+                    <button type="button" class="btn btn-outline-dark btn-md ms-1" (click)="applyPromoCode()">
+                      Apply
+                    </button>
+                  </div>
+
+                  <p class="text-success" *ngIf="promoMessage" [ngClass]="{'text-danger': isInvalidPromo}">
+                    {{ promoMessage }}
+                  </p>
+
                   <hr class="my-4" />
+
+                  <div class="d-flex justify-content-between mb-5">
+                    <h5 class="text-uppercase">Total Price</h5>
+                    <h5>{{ getTotalPrice(cart$ | async) }}</h5>
+                  </div>
 
                   <button type="button" class="btn btn-outline-success btn-lg me-1">
                     Checkout
                   </button>
                 </div>
               </div>
-              <!-- End of Summary Section -->
             </div>
           </div>
         </div>
