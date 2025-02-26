@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Product } from '../models/product.model';
 import { removeFromCart } from '../state/cart/cart.actions';
+import { decrement } from '../state/counter/counter.actions';
 
 @Component({
   selector: 'app-cart',
@@ -21,10 +22,12 @@ export class CartComponent implements OnInit {
 
   removeItem(productId: number) {
     this.store.dispatch(removeFromCart({ productId }));
+    this.store.dispatch(decrement());
   }
 
-  getTotalPrice(cart: Product[] | null): number {
-    if (!cart) return 0;
-    return cart.reduce((total, item) => total + item.price, 0);
+  getTotalPrice(cart: Product[] | null): string {
+    if (!cart) return '0.00 SR';
+    const total = cart.reduce((sum, item) => sum + item.price, 0);
+    return total.toFixed(2) + ' SR';
   }
 }
