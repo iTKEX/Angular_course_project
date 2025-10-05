@@ -75,8 +75,7 @@ src/
 
 ### 1. Clone and Install
 ```bash
-git clone https://github.com/<your-username>/<your-repo>.git
-cd <your-repo>
+git clone https://github.com/iTKEX/Angular_course_project
 npm install
 ```
 
