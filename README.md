@@ -193,16 +193,6 @@ ng build --configuration production
 dist/project
 ```
 
-**SPA Redirects:**  
-Create `_redirects` file inside `dist/project`:
-```
-/*  /index.html  200
-```
-
-**Environment Variables (optional):**  
-Set in Netlify → **Site Settings → Build & Deploy → Environment**  
-e.g. `API_BASE_URL=https://api.example.com`
-
 ---
 
 ## 🚀 Future Enhancements
